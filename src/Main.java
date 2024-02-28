@@ -1,15 +1,16 @@
 import java.util.*;
+import DisjointSet.*;
+import Graph.*;
+
 
 public class Main {
     public static void main(String[] args) {
         testConnectedComponents();
-
         testKruskal();
-
     }
 
     private static void testKruskal() {
-        Graph<Character> graph2 = new Graph<>();
+        Graph<Character> graph2 = new Graph<Character>();
         for (int i = 0; i < 7; i++) {
             graph2.addVertex((char) ('A' + i));
         }
@@ -31,7 +32,7 @@ public class Main {
     }
 
     private static void testConnectedComponents() {
-        Graph<Integer> graph = new Graph<>();
+        Graph<Integer> graph = new Graph<Integer>();
         for (int i = 0; i < 6; i++) {
             graph.addVertex(i);
         }
@@ -46,7 +47,7 @@ public class Main {
     }
 
     private static <T> List<List<T>> connectedComponents(Graph<T> graph) {
-        DisjointSet<T> dsu = new DisjointSet<>();
+        DisjointSet<T> dsu = new DisjointSet<T>();
         for (T i : graph.getVertices()) {
             dsu.makeSet(i);
         }
@@ -59,8 +60,8 @@ public class Main {
     }
 
     private static <T> Graph<T> kruskal(Graph<T> graph) {
-        Graph<T> mst = new Graph<>();
-        DisjointSet<T> dsu = new DisjointSet<>();
+        Graph<T> mst = new Graph<T>();
+        DisjointSet<T> dsu = new DisjointSet<T>();
         for (T vertex : graph.getVertices()) {
             mst.addVertex(vertex);
             dsu.makeSet(vertex);

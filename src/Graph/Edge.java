@@ -1,5 +1,7 @@
+package Graph;
+
 /**
- * Edge class to represent an edge in a graph
+ * Graph.Edge class to represent an edge in a graph
  * @param <T> type of the label for the vertex
  */
 public class Edge<T> implements Comparable<Edge<T>> {
@@ -30,7 +32,7 @@ public class Edge<T> implements Comparable<Edge<T>> {
 
     @Override
     public String toString() {
-        return "Edge{" +
+        return "Graph.Edge{" +
                 "src=" + srcLabel +
                 ", dst=" + dstLabel +
                 '}';

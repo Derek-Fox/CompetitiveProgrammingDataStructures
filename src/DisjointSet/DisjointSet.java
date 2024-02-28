@@ -1,3 +1,5 @@
+package DisjointSet;
+
 import java.util.*;
 
 /**
@@ -30,7 +32,7 @@ public class DisjointSet<T> {
      */
     public void makeSet(T value) {
         if (nodes.containsKey(value)) {
-            throw new IllegalArgumentException("Node values must be distinct.");
+            throw new IllegalArgumentException("DisjointSet.Node values must be distinct.");
         }
         nodes.put(value, new Node<>(value));
         numSets++;
